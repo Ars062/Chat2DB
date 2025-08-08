@@ -72,11 +72,11 @@ few_shot_prompt = FewShotPromptTemplate(
     example_prompt=example_prompt,
     prefix=_mysql_prompt,
     suffix=PROMPT_SUFFIX,
-    input_variables=["input"],  # ✅ only 'input'
+    input_variables=["input"], 
     partial_variables={
         "tools": "{tools}",
         "tool_names": "{tool_names}",
-        "agent_scratchpad": "{agent_scratchpad}"  # ✅ now agent_scratchpad is partial
+        "agent_scratchpad": "{agent_scratchpad}"  
     }
 )
 agent_executor = create_sql_agent(
@@ -103,4 +103,5 @@ def run_sql_agent(query: str) -> str:
 # if __name__ == "__main__":
 #     qsn1= "How many t-shirts do we have left for nike in extra small size and white color?"
 #     response = run_sql_agent( qsn1)
+
 #     print(response)
